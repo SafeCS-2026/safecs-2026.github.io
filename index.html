@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SafeCS: Safety-Aware Robotic Behavior Planner</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <style>
+    /* 学术表格风格 */
+    .academic-table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-family: 'Noto Sans', sans-serif;
+      color: #333;
+      border: none !important; /* 移除 Bulma 默认的外边框 */
+    }
+    .academic-table th {
+      border-top: 2px solid #333 !important; /* Toprule */
+      border-bottom: 1px solid #333 !important; /* Midrule */
+      text-align: center !important;
+      background-color: transparent !important;
+    }
+    .academic-table td {
+      text-align: center !important;
+      border: none !important;
+    }
+    .academic-table tr:last-child td {
+      border-bottom: 2px solid #333 !important; /* Bottomrule */
+    }
+    .highlight-row {
+      background-color: #e6f2ff !important; /* 对应 LaTeX 的 rowcolor{blue!10} */
+      font-weight: bold;
+    }
+    .table-container {
+      overflow-x: auto;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">A Generalizable Approach for Safety-Aware Robotic Behavior Planner with Constraint Space</h1>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Anonymous Author(s)</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Paper ID: CASE 2026 #550</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/teaser_arch.png" 
+           alt="Closed-loop architecture for adaptive constraint space generalization and rule-constrained behavior planning" 
+           style="width: 100%; height: auto; border-radius: 10px;">
+      <h2 class="subtitle has-text-centered">
+        Integrating RAG-driven constraint spaces with test-time adaptation to enable autonomous safety rule evolution for generalizable, hazard-free robotic behavior planning.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In robotic manipulation, unsafe human actions or fully AI-controlled operations can pose significant safety risks. This study proposes a behavior planning system based on a constraint space, where robots generate action sequences that consider environment-specific rules and hazards.
+            The system architecture consists of three layers: (i) Constraint Space Layer with RAG, (ii) Planner Layer using LMP, and (iii) Adaptive Learning Layer utilizing a Test-Time Adaptation (TTA) mechanism. Extensive evaluations show a safety rate of 83% and a success rate of 79%, effectively doubling the performance of state-of-the-art methods.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div style="margin-top: 3rem;"></div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="title is-3">Key Features</h2>
+        <div class="content">
+          <ul style="display: inline-block; text-align: left; list-style-type: disc;">
+            <li><strong>Constraint Space via RAG</strong></li>
+            <li><strong>Safety-Aware Behavior Planner</strong></li>
+            <li><strong>Adaptive Learning via TTA</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Methodology</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            While Large Language Models (LLMs) excel at decomposing high-level commands, they often lack the embodied common sense required to identify environmental hazards—such as the risk of pouring liquid near electrical appliances. To bridge this gap, our <strong>SafeCS-Planner</strong> framework introduces a safety-aware pipeline that integrates human instructions with a structured <strong>Constraint Space</strong>. By combining Retrieval-Augmented Generation (RAG) for known protocols and an <strong>Adaptive Learning</strong> module for novel scenarios, the system generates Task and Motion Planning (TAMP) code that strictly adheres to environment-specific safety rules, ensuring both task success and hazard avoidance.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/pipeline.png" alt="System Pipeline" style="width: 100%; max-width: 900px; border-radius: 8px;">
+        </div>
+
+        <br>
+
+        <div class="content has-text-justified">
+          <p>
+            To provide the robot with a reliable "safety manual," we developed a <strong>Constraint Space</strong> that stores a diverse range of protocols collected from expert knowledge and AI-generated scenarios. We link this knowledge base to the planning agent using a <strong>Retrieval-Augmented Generation (RAG)</strong> structure. Based on the task instruction, the system retrieves the most relevant safety rules and injects them into the planner's prompt. This mechanism ensures that the robot's behavior is grounded in explicit, verifiable safety constraints rather than relying on the unpredictable common-sense reasoning of a foundation model.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/RAG.png" alt="RAG-based Retrieval" style="width: 80%; max-width: 700px; border-radius: 8px;">
+        </div>
+
+        <br>
+
+        <div class="content has-text-justified">
+          <p>
+            Recognizing that static rules cannot cover every dynamic hazard, our <strong>Adaptive Learning</strong> module enables the system to evolve through <strong>Test-Time Adaptation (TTA)</strong>. When the system identifies a low-confidence scenario where existing rules are insufficient, it autonomously generates candidate rules. These rules are then subjected to a <strong>Validation-through-Planning</strong> process: the system generates a trial plan and employs an automated inspector to assess safety. If risks are detected, the rules are refined through a feedback loop. Once validated, these new rules are internalized into the Constraint Space, achieving lifelong learning and continuous system optimization.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/close-loop.png" alt="Closed-loop Optimization" style="width: 80%; max-width: 700px; border-radius: 8px;">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Experimental Results</h2>
+
+    <div class="content">
+      <h3 class="title is-4">Synthetic Dataset Experiments</h3>
+      <p>
+        We evaluate our system across a diverse range of dynamic hazard scenarios in a synthetic dataset. The evaluation covers basic performance benchmarks, ablation studies of key architectural modules, and extensive analysis of the system's generalization capabilities.
+      </p>
+
+      <div class="columns is-centered">
+        <div class="column is-one-third">
+          <p class="has-text-centered"><strong>Performance Comparison</strong></p>
+          <div class="table-container">
+            <table class="table is-fullwidth academic-table">
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>Safe &uarr;</th>
+                  <th>Succ &uarr;</th>
+                  <th>Cost &darr;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>VP</td><td>0.02</td><td>0.01</td><td>9877</td></tr>
+                <tr><td>GFR</td><td>0.03</td><td>0.02</td><td>9726</td></tr>
+                <tr><td>SaP</td><td>0.36</td><td>0.27</td><td>7343</td></tr>
+                <tr class="highlight-row">
+                  <td>Ours</td><td>0.83</td><td>0.79</td><td>5407</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="column is-one-third">
+          <p class="has-text-centered"><strong>Module Ablation</strong></p>
+          <div class="table-container">
+            <table class="table is-fullwidth academic-table">
+              <thead>
+                <tr>
+                  <th>Module</th>
+                  <th>Safe &uarr;</th>
+                  <th>Succ &uarr;</th>
+                  <th>Cost &darr;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Baseline</td><td>0.37</td><td>0.27</td><td>7343</td></tr>
+                <tr><td>w/o TTA</td><td>0.47</td><td>0.46</td><td>5998</td></tr>
+                <tr><td>w/o CS</td><td>0.82</td><td>0.71</td><td>6160</td></tr>
+                <tr class="highlight-row">
+                  <td>Ours (Full)</td><td>0.83</td><td>0.79</td><td>5407</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="column is-one-third">
+          <p class="has-text-centered"><strong>TTA Injection Rounds</strong></p>
+          <div class="table-container">
+            <table class="table is-fullwidth academic-table">
+              <thead>
+                <tr>
+                  <th>Round</th>
+                  <th>Safe &uarr;</th>
+                  <th>Succ &uarr;</th>
+                  <th>Cost &darr;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>0 (Base)</td><td>0.47</td><td>0.46</td><td>5998</td></tr>
+                <tr><td>1-round</td><td>0.56</td><td>0.51</td><td>5138</td></tr>
+                <tr class="highlight-row">
+                  <td>2-rounds</td><td>0.62</td><td>0.60</td><td>5007</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    <br>
+
+    <div class="content">
+      <h3 class="title is-4">Real-world Experiments</h3>
+      <p>
+        To verify the reliability in physical environments, we conduct robotic manipulation experiments in real-world office settings. The results demonstrate the robot's ability to identify and avoid complex dynamic hazards, such as pouring water near power strip, ensuring safe task execution.
+      </p>
+      
+      <div class="has-text-centered">
+        <img src="./static/images/realworld_full_process.png" alt="Real-world Experiment Process" style="width: 100%; max-width: 1000px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <div class="content">
+          <p>
+            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
